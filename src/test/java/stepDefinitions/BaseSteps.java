@@ -21,7 +21,6 @@ public class BaseSteps {
         WebDriverManager.chromedriver().clearDriverCache().setup();
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--user-data-dir=tmp/chrome_profile_" + UUID.randomUUID());
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
