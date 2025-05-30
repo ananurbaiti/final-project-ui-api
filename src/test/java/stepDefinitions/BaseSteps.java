@@ -17,17 +17,17 @@ public class BaseSteps {
 
     @Before
     public void setup() {
-        System.out.println("Setting up driver..");
+        System.out.println("Setting up driver...");
         WebDriverManager.chromedriver().clearDriverCache().setup();
-
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--user-data-dir=/tmp/chrome_profile_" + UUID.randomUUID());
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--headless=new");
+        options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-
-        driver = new ChromeDriver(options);
-
+        options.addArguments("--remote-allow-origins=*");
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         System.out.println("Driver setup completed");
