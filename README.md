@@ -58,6 +58,7 @@ Public API used for API testing:
 🔗 https://dummyapi.io/
 
 📄 Run Feature Files Individually
+
 You can also run specific feature files via IDE (IntelliJ) or command line using tags:
 
 `@api` — Run API tests
@@ -80,7 +81,9 @@ You can also run specific feature files via IDE (IntelliJ) or command line using
 ## 📈 Test Reports
 
 Test results will be generated in `reports/`
+
 HTML and JSON reports are available after execution
+
 UI screenshots (on failure) will be stored in target/screenshots/
 
 ## 🔁 GitHub Actions
@@ -88,6 +91,7 @@ UI screenshots (on failure) will be stored in target/screenshots/
 This project is fully integrated with GitHub Actions:
 
 `api-test.yml`: Triggers API tests on Pull Request or manual trigger
+
 `ui-test.yml`: Triggers UI tests on Pull Request or manual trigger
 
 You can trigger workflows manually from the GitHub Actions tab.
@@ -116,5 +120,6 @@ You can trigger workflows manually from the GitHub Actions tab.
 ## 👤 Author
 
 Project created as part of Automation Testing final assignment.
+
 Maintained by: @ananurbaiti
 
