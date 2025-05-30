@@ -40,3 +40,8 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Test Reports ###
+**/target/cucumber-reports.html
+**/build/reports/**/*.html
+**/cucumber-reports.html
