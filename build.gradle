@@ -1,0 +1,109 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.ananurbaiti'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+   //Selenium: Untuk automasi Web UI Testing.
+    implementation("org.seleniumhq.selenium:selenium-java:4.31.0")
+
+    //Vintage Engine: Jalankan test JUnit 3 & 4 dalam ekosistem JUnit 5
+    testImplementation("org.junit.vintage:junit-vintage-engine:5.13.0-M2")
+
+    //Cucumber: Untuk BDD testing berbasis Gherkin.
+    implementation("io.cucumber:cucumber-java:7.22.0")
+    testImplementation("io.cucumber:cucumber-junit:7.22.0")
+
+    //JNA: Library untuk native access dari Java
+    implementation 'net.java.dev.jna:jna:5.14.0'
+
+    //RestAssured/jsonpath/json-schema-validator: Untuk API Testing
+    testImplementation("io.rest-assured:rest-assured:5.5.1")
+    implementation("io.rest-assured:json-path:5.5.1")
+    implementation("io.rest-assured:json-schema-validator:5.5.1")
+
+    //org.json: Parser JSON
+    implementation("org.json:json:20250107")
+
+    //AssertJ
+    testImplementation 'org.assertj:assertj-core:3.25.3'
+
+    //WebDriverManager
+    implementation 'io.github.bonigarcia:webdrivermanager:5.9.3'
+
+    //javafaker: Untuk data palsu (fake data) dalam testing
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+
+    //SLF4J: Logging framework. slf4j-simple adalah implementasi ringan.
+    implementation 'org.slf4j:slf4j-api:2.0.16'
+    implementation 'org.slf4j:slf4j-simple:2.0.16'
+
+    //JUnit Jupiter: Untuk unit testing dengan JUnit 5
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // commons-io: untuk FileUtils (misalnya copyFile di screenshot)
+    implementation 'commons-io:commons-io:2.13.0'
+}
+
+test {
+    useJUnit()
+}
+
+//Cucumber Runtime Configuration
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+//Tag Management
+def tags = (findProperty('tags') == null) ? 'not @exclude' : findProperty('tags') + ' and not @exclude'
+
+//Custom Cucumber Task
+task cucumber(){
+    description("Running Cucumber Test")
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.test.output
+            args = [
+                    '--plugin', 'html:reports/test-report.html',
+                    '--plugin', 'pretty',
+                    '--glue', 'stepDefinitions',
+                    '--tags', "${tags}",
+                    'src/test/resources/features'
+            ]
+        }
+    }
+}
+
+//Custom API Test Task
+task apiTest(type: Test) {
+    description("Running API Tests")
+    useJUnitPlatform()
+    include '**/api/**' // filter lokasi test package
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
+    systemProperty 'junit.jupiter.extensions.autodetection.enabled', 'true'
+
+}
+
+task webTest {
+    description("Run Web UI tests only")
+    dependsOn cucumber
+    doFirst {
+        project.ext.set("tags", "@web")
+    }
+}
+
