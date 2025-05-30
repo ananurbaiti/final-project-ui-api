@@ -19,6 +19,7 @@ This project is a test automation framework for REST API and Web UI using Java, 
 ---
 
 ## Struktur Proyek
+
 ```
 final-project-ui-api/
 ├── .github/workflows/               # GitHub Actions workflows untuk API dan UI test
@@ -76,29 +77,30 @@ You can also run specific feature files via IDE (IntelliJ) or command line using
 ./gradlew webTest
 ```
 
-📈 Test Reports
+## 📈 Test Reports
+
 Test results will be generated in `reports/`
-
 HTML and JSON reports are available after execution
-
 UI screenshots (on failure) will be stored in target/screenshots/
 
-🔁 GitHub Actions
+## 🔁 GitHub Actions
+
 This project is fully integrated with GitHub Actions:
 
 `api-test.yml`: Triggers API tests on Pull Request or manual trigger
-
 `ui-test.yml`: Triggers UI tests on Pull Request or manual trigger
 
 You can trigger workflows manually from the GitHub Actions tab.
 
-📌 Tags Used in Feature Files
+
+## 📌 Tags Used in Feature Files
 | Tag    | Description          |
 | ------ | -------------------- |
 | `@api` | API test scenario    |
 | `@web` | Web UI test scenario |
 
-📚 Folder Details
+
+## 📚 Folder Details
 
 | Folder/File             | Description                              |
 | ----------------------- | ---------------------------------------- |
@@ -110,7 +112,9 @@ You can trigger workflows manually from the GitHub Actions tab.
 | `WebDriverFactory.java` | WebDriver initialization for Selenium    |
 | `TestRunner.java`       | Runner class for Cucumber tests          |
 
-👤 Author
+
+## 👤 Author
+
 Project created as part of Automation Testing final assignment.
 Maintained by: @ananurbaiti
 
