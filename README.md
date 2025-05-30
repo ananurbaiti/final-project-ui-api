@@ -28,8 +28,7 @@ final-project-ui-api/
 │   ├── api-test.yml
 │   └── ui-test.yml
 ├── build.gradle                     # Skrip build Gradle
-├── reports/                        # Folder hasil laporan test
-├── screenshots/                    # Folder screenshot hasil test UI
+├── reports/                        # Folder hasil laporan test                   
 ├── src/
 │   ├── main/
 │   │   └── java/org/anna/          # Main class (jika ada)
