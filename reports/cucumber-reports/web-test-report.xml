@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="72.289" tests="9" skipped="0" failures="0" errors="0" timestamp="2025-05-30T05:11:51.298905Z">
+<testcase classname="Test Automation Rest Api" name="Test get list user" time="1.545">
+<system-out><![CDATA[
+Given prepare url valid for "GET_LIST_USERS"................................passed
+And hit api get list users..................................................passed
+Then validation status code is equals 200...................................passed
+Then validation response body get list users................................passed
+Then validation response json with JSONSchema "get_list_users.json".........passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Automation Rest Api" name="Test get user by id" time="0.489">
+<system-out><![CDATA[
+Given prepare url valid for get user by id "60d0fe4f5311236168a109ce".......passed
+When hit api get user.......................................................passed
+Then validation status code is equals 200...................................passed
+And validation response body get user by id.................................passed
+And validation response json with JSONSchema "get_user_by_id.json"..........passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Automation Rest Api" name="Test create new user" time="0.502">
+<system-out><![CDATA[
+Given prepare valid request payload for new user............................passed
+And prepare url valid for "CREATE_NEW_USER".................................passed
+When hit api post create new user...........................................passed
+Then validation status code is equals 200...................................passed
+And validation response body create new user................................passed
+And validation response json with JSONSchema "create_users_normal.json".....passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Automation Rest Api" name="Test delete user normal" time="0.757">
+<system-out><![CDATA[
+Given prepare url valid for get user by id "60d0fe4f5311236168a109cf".......passed
+When hit api get user.......................................................passed
+And validation response body get user by id.................................passed
+Given prepare url valid for "DELETE_USER"...................................passed
+And hit api delete user.....................................................passed
+Then validation status code is equals 400...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Automation Web UI" name="Sign up with valid username and password" time="25.77">
+<system-out><![CDATA[
+Given user is on sign up page...............................................passed
+When user input username with "randomusername"..............................passed
+And user input password with "mei2025"......................................passed
+And user click sign up button...............................................passed
+Then user will redirect to homepage after sign up...........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Automation Web UI" name="Login with valid username and password" time="5.555">
+<system-out><![CDATA[
+Given user is on login page.................................................passed
+When user input to username with "bulanmei".................................passed
+And user input to password with "282025"....................................passed
+And user click login button.................................................passed
+Then user will redirect to homepage after login.............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Automation Web UI" name="Login with invalid username and password" time="8.344">
+<system-out><![CDATA[
+Given user is on login page.................................................passed
+When user input to username with "user123"..................................passed
+And user input to password with "wrongpass".................................passed
+And user click login button.................................................passed
+Then A message appears "Wrong password."....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Automation Web UI" name="End to end test from login to checkout" time="14.328">
+<system-out><![CDATA[
+Given user is on login page.................................................passed
+When user input to username with "annanur2025"..............................passed
+And user input to password with "mei2025"...................................passed
+And user click login button.................................................passed
+Then user will redirect to homepage.........................................passed
+Given user is on the product page...........................................passed
+When user choose product "Nexus 6"..........................................passed
+And user click Add to cart button...........................................passed
+Then user should be redirected to Cart page with title "STORE"..............passed
+And user click "Cart" button................................................passed
+And User should be redirected to "https://www.demoblaze.com/cart.html"......passed
+And user click "Place Order" button.........................................passed
+And User fills the order form with:.........................................passed
+And user click "Purchase" button............................................passed
+Then "Thank you for your purchase!" message should appear...................passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Automation Web UI" name="Checkout with empty shipping information" time="14.9">
+<system-out><![CDATA[
+Given user is on login page.................................................passed
+When user input to username with "putri_salju"..............................passed
+And user input to password with "lezat123"..................................passed
+And user click login button.................................................passed
+Then user will redirect to homepage.........................................passed
+Given user is on the product page...........................................passed
+When user choose product "Nexus 6"..........................................passed
+And user click Add to cart button...........................................passed
+Then user should be redirected to Cart page with title "STORE"..............passed
+And user click "Cart" button................................................passed
+And User should be redirected to "https://www.demoblaze.com/cart.html"......passed
+And user click "Place Order" button.........................................passed
+When User attempts to checkout without filling required fields..............passed
+Then an alert with text "Please fill out Name and Creditcard." should appear.passed
+Then I close the browser securely...........................................passed
+]]></system-out>
+</testcase>
+</testsuite>
