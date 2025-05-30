@@ -31,7 +31,7 @@ final-project-ui-api/
 ├── reports/                        # Folder hasil laporan test                   
 ├── src/
 │   ├── main/
-│   │   └── java/org/anna/          # Main class (jika ada)
+│   │   └── java/org/anna/          
 │   └── test/
 │       ├── java/
 │       │   ├── helper/             # Utility, endpoint, model, dan helper lainnya
