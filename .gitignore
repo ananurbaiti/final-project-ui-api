@@ -41,7 +41,8 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-### Test Reports ###
+# Ignore test report HTML files
+reports/
 **/target/cucumber-reports.html
 **/build/reports/**/*.html
 **/cucumber-reports.html
