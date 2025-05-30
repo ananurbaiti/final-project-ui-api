@@ -2,6 +2,7 @@
 
 This project is a test automation framework for REST API and Web UI using Java, Rest-Assured, Selenium, and Cucumber. The framework aims to simplify automated testing of web applications and API services.
 
+
 ---
 
 ## 🧰 Tools & Libraries Used
@@ -17,6 +18,7 @@ This project is a test automation framework for REST API and Web UI using Java, 
 | GitHub Actions  | CI/CD for test automation                   |
 
 ---
+
 
 ## Struktur Proyek
 
@@ -47,17 +49,20 @@ final-project-ui-api/
 ```
 ---
 
+
 ## 🌐 Web UI Target
 
 Website used for UI testing:  
 🔗 https://www.demoblaze.com/
+
 
 ## 📡 API Target
 
 Public API used for API testing:  
 🔗 https://dummyapi.io/
 
-📄 Run Feature Files Individually
+
+## 📄 Run Feature Files Individually
 
 You can also run specific feature files via IDE (IntelliJ) or command line using tags:
 
@@ -78,6 +83,7 @@ You can also run specific feature files via IDE (IntelliJ) or command line using
 ./gradlew webTest
 ```
 
+
 ## 📈 Test Reports
 
 Test results will be generated in `reports/`
@@ -85,6 +91,7 @@ Test results will be generated in `reports/`
 HTML and JSON reports are available after execution
 
 UI screenshots (on failure) will be stored in target/screenshots/
+
 
 ## 🔁 GitHub Actions
 
