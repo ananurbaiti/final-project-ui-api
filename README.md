@@ -19,35 +19,31 @@ This project is a test automation framework for REST API and Web UI using Java, 
 ---
 
 ## Struktur Proyek
-
+```
 final-project-ui-api/
-├── .github/workflows/ # GitHub Actions workflow untuk API dan UI test
-│ ├── api-test.yml
-│ └── ui-test.yml
-├── build.gradle # Build script Gradle
-├── reports/ # Folder hasil laporan test
-│ ├── cucumber-reports.html # Laporan HTML dari Cucumber
-│ ├── cucumber-reports.json # Laporan JSON dari Cucumber
-│ ├── cucumber-reports/
-│ │ ├── timeline/ # Timeline report dari Cucumber
-│ │ ├── web-test-report.xml # Laporan JUnit XML
-│ │ └── rerun.txt # File rerun test
-├── screenshots/ # Folder screenshot hasil test UI
+├── .github/workflows/               # GitHub Actions workflows untuk API dan UI test
+│   ├── api-test.yml
+│   └── ui-test.yml
+├── build.gradle                     # Skrip build Gradle
+├── reports/                        # Folder hasil laporan test
+├── screenshots/                    # Folder screenshot hasil test UI
 ├── src/
-│ ├── main/java/org/anna/ # Main class (jika ada)
-│ └── test/
-│ ├── java/
-│ │ ├── helper/ # Utility, endpoint, model, dan helper lainnya
-│ │ ├── pages/ # Page Object Model untuk UI test
-│ │ ├── runner/ # Test runner Cucumber
-│ │ └── stepDefinitions/ # Step definitions untuk Cucumber
-│ └── resources/
-│ └── features/ # File fitur Cucumber (.feature)
-│ ├── api.feature
-│ └── webui.feature
-├── target/ # Build output dan screenshot hasil test UI
-└── README.md # Dokumentasi proyek ini
+│   ├── main/
+│   │   └── java/org/anna/          # Main class (jika ada)
+│   └── test/
+│       ├── java/
+│       │   ├── helper/             # Utility, endpoint, model, dan helper lainnya
+│       │   │   └── JSONSchemaData/ # File JSON schema untuk validasi API
+│       │   ├── pages/              # Page Object Model untuk UI test
+│       │   ├── runner/             # Cucumber test runner
+│       │   └── stepDefinitions/    # Step definitions untuk Cucumber
+│       └── resources/
+│           └── features/           # File fitur Cucumber (.feature)
+├── target/
+│   └── screenshots/                # Screenshot hasil test UI
+└── README.md                      # Dokumentasi proyek
 
+```
 ---
 
 ## 🌐 Web UI Target
