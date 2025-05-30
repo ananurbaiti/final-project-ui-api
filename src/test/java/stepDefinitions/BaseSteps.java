@@ -21,12 +21,11 @@ public class BaseSteps {
         WebDriverManager.chromedriver().clearDriverCache().setup();
 
         ChromeOptions options = new ChromeOptions();
-
-        options.addArguments("--user-data-dir=/tmp/chrome_profile_" + UUID.randomUUID());
-        options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--headless");  // Bisa pakai "new" juga, tapi 'headless' sudah cukup
+        options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--remote-allow-origins=*");
 
         driver = new ChromeDriver(options);
 
