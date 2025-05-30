@@ -8,8 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 import java.time.Duration;
-import java.util.UUID;
 
 public class BaseSteps {
     protected static WebDriver driver;
@@ -22,12 +22,12 @@ public class BaseSteps {
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--headless");
+        options.addArguments("--headless=new");  // bisa coba --headless juga
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--user-data-dir=/tmp/unique-profile-" + System.currentTimeMillis());
 
         driver = new ChromeDriver(options);
-
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         System.out.println("Driver setup completed");

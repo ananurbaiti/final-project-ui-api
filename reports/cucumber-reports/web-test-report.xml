@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="72.289" tests="9" skipped="0" failures="0" errors="0" timestamp="2025-05-30T05:11:51.298905Z">
-<testcase classname="Test Automation Rest Api" name="Test get list user" time="1.545">
+<testsuite name="Cucumber" time="65.045" tests="9" skipped="0" failures="0" errors="0" timestamp="2025-05-30T07:44:47.938583Z">
+<testcase classname="Test Automation Rest Api" name="Test get list user" time="2.026">
 <system-out><![CDATA[
 Given prepare url valid for "GET_LIST_USERS"................................passed
 And hit api get list users..................................................passed
@@ -9,7 +9,7 @@ Then validation response body get list users................................pass
 Then validation response json with JSONSchema "get_list_users.json".........passed
 ]]></system-out>
 </testcase>
-<testcase classname="Test Automation Rest Api" name="Test get user by id" time="0.489">
+<testcase classname="Test Automation Rest Api" name="Test get user by id" time="0.564">
 <system-out><![CDATA[
 Given prepare url valid for get user by id "60d0fe4f5311236168a109ce".......passed
 When hit api get user.......................................................passed
@@ -18,7 +18,7 @@ And validation response body get user by id.................................pass
 And validation response json with JSONSchema "get_user_by_id.json"..........passed
 ]]></system-out>
 </testcase>
-<testcase classname="Test Automation Rest Api" name="Test create new user" time="0.502">
+<testcase classname="Test Automation Rest Api" name="Test create new user" time="0.686">
 <system-out><![CDATA[
 Given prepare valid request payload for new user............................passed
 And prepare url valid for "CREATE_NEW_USER".................................passed
@@ -28,7 +28,7 @@ And validation response body create new user................................pass
 And validation response json with JSONSchema "create_users_normal.json".....passed
 ]]></system-out>
 </testcase>
-<testcase classname="Test Automation Rest Api" name="Test delete user normal" time="0.757">
+<testcase classname="Test Automation Rest Api" name="Test delete user normal" time="1.321">
 <system-out><![CDATA[
 Given prepare url valid for get user by id "60d0fe4f5311236168a109cf".......passed
 When hit api get user.......................................................passed
@@ -38,7 +38,7 @@ And hit api delete user.....................................................pass
 Then validation status code is equals 400...................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Test Automation Web UI" name="Sign up with valid username and password" time="25.77">
+<testcase classname="Test Automation Web UI" name="Sign up with valid username and password" time="26.787">
 <system-out><![CDATA[
 Given user is on sign up page...............................................passed
 When user input username with "randomusername"..............................passed
@@ -47,7 +47,7 @@ And user click sign up button...............................................pass
 Then user will redirect to homepage after sign up...........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Test Automation Web UI" name="Login with valid username and password" time="5.555">
+<testcase classname="Test Automation Web UI" name="Login with valid username and password" time="4.7">
 <system-out><![CDATA[
 Given user is on login page.................................................passed
 When user input to username with "bulanmei".................................passed
@@ -56,7 +56,7 @@ And user click login button.................................................pass
 Then user will redirect to homepage after login.............................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Test Automation Web UI" name="Login with invalid username and password" time="8.344">
+<testcase classname="Test Automation Web UI" name="Login with invalid username and password" time="4.405">
 <system-out><![CDATA[
 Given user is on login page.................................................passed
 When user input to username with "user123"..................................passed
@@ -65,7 +65,7 @@ And user click login button.................................................pass
 Then A message appears "Wrong password."....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Test Automation Web UI" name="End to end test from login to checkout" time="14.328">
+<testcase classname="Test Automation Web UI" name="End to end test from login to checkout" time="12.72">
 <system-out><![CDATA[
 Given user is on login page.................................................passed
 When user input to username with "annanur2025"..............................passed
@@ -84,7 +84,7 @@ And user click "Purchase" button............................................pass
 Then "Thank you for your purchase!" message should appear...................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Test Automation Web UI" name="Checkout with empty shipping information" time="14.9">
+<testcase classname="Test Automation Web UI" name="Checkout with empty shipping information" time="11.72">
 <system-out><![CDATA[
 Given user is on login page.................................................passed
 When user input to username with "putri_salju"..............................passed
